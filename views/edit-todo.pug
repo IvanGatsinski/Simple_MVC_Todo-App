@@ -1,0 +1,13 @@
+extends ./layouts/main.pug
+
+block content
+    h3 Edit Todo
+    form(action=`/edit-todo/${_id}`, method="post")
+        div
+            label(for="name") Name
+            input(type="text", name="name", value=`${name}`)
+        div
+            label(for="activity") Activity
+            input(type="text", name="activity", value=`${activity}`)
+        div
+            input(type="submit", value="save")

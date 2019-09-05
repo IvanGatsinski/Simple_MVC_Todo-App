@@ -1,0 +1,14 @@
+extends ./layouts/main.pug
+
+block content
+    h3 Create Todo
+    form(action="/add-todo", method="post")
+        div
+            label(for="name") Name
+            input(type="text", name="name")
+        div
+            label(for="activity") Activity
+            input(type="text", name="activity")
+        div
+            input(type="submit", value="add todo")
+        

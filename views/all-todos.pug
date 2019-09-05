@@ -1,0 +1,18 @@
+extends ./layouts/main.pug
+
+block content
+    h2 All Products
+    hr
+    ul(class="list")
+        each todo, index in todos
+            li(class="list-item")
+                p #{index + 1}. Todo name: #{todo.name}
+                p activity: #{todo.activity}
+                div
+                    span
+                        button
+                            a(href=`/edit-todo/${todo._id}`) Edit
+                    span
+                        form(action=`/delete-todo/${todo._id}`, method="post")
+                            input(type="submit", value="delete")
+            br    
